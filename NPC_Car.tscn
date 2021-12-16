@@ -1,0 +1,101 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends KinematicBody2D
+
+signal health_updated(health)
+signal broken()
+signal check_position(this_car)
+
+var active = 0
+var parking = 0
+
+var wheel_base = 10  
+var steering_angle = 16  
+var engine_power = 2000
+var friction = -2
+var drag = -0.1
+var breaking = -362
+var max_speed_reverse = 150
+
+var splip_speed = 200
+var traction_fast = 0.1
+var traction_slow = 0.4
+
+var acceleration = Vector2.ZERO
+var velocity = Vector2.ZERO
+var steer_direction = 0
+
+onready var iFrames = $IFrames
+onready var effects_anim = $EffectsAnim
+onready var lights = $CarBody/Ligths
+onready var label = $HealthDisplay/Label
+onready var shape = $CollisionShape2D
+
+func _physics_process(delta):
+	acceleration = transform.y * -engine_power 
+	#_apply_friction()
+	#_calculate_steering(delta)
+	_apply_movement(delta)
+
+func _apply_movement(delta):
+	velocity = acceleration * delta
+	velocity = move_and_slide(velocity)
+	
+	move_and_slide(velocity, Vector2(0, 0), false, 4, PI/4, false)
+
+func _apply_friction():
+	if velocity.length() < 6:
+		velocity = Vector2.ZERO
+	var friction_force = velocity * friction
+	var drag_force = velocity * velocity.length() * drag
+	acceleration += friction_force + drag_force
+
+
+func _handle_move_input():
+	acceleration = Vector2.ZERO
+	if active:
+		var turn = 0
+		if Input.is_action_pressed(\"right\"):
+			turn += 1
+		if Input.is_action_pressed(\"left\"):
+			turn -= 1
+		steer_direction = turn * deg2rad(steering_angle)
+		if Input.is_action_pressed(\"up\"):
+			acceleration = transform.x * engine_power 
+		if Input.is_action_pressed(\"down\"):
+			acceleration = transform.x * breaking
+			
+
+func _calculate_steering(delta):
+	var rear_wheel = position - transform.x * wheel_base / 2.0
+	var front_wheel = position + transform.x * wheel_base / 2.0
+	
+	rear_wheel += velocity * delta
+	front_wheel += velocity.rotated(steer_direction) * delta
+	
+	var new_heading = (front_wheel - rear_wheel).normalized()
+	var traction = traction_slow
+	
+	if velocity.length() > splip_speed:
+		traction = traction_fast
+	
+	var d = new_heading.dot(velocity.normalized())
+	if d > 0:
+		velocity = velocity.linear_interpolate(new_heading * velocity.length(), traction)
+	else:
+		velocity = -new_heading * min(velocity.length(), max_speed_reverse)
+	rotation = new_heading.angle()
+
+func _on_IFrames_timeout():
+	effects_anim.play(\"rest\")
+"
+
+[sub_resource type="CapsuleShape2D" id=2]
+
+[node name="NPC_Car" type="KinematicBody2D"]
+script = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 3.14159
+shape = SubResource( 2 )

@@ -1,0 +1,1279 @@
+[gd_scene load_steps=44 format=2]
+
+[ext_resource path="res://Parking pack/PNG/Other/Black_ConcreteStop_Left.png" type="Texture" id=1]
+[ext_resource path="res://Parking pack/PNG/Other/Black_ConcreteHorizontal.png" type="Texture" id=2]
+[ext_resource path="res://Parking pack/PNG/Other/Black_ConcreteVertical.png" type="Texture" id=3]
+[ext_resource path="res://Parking pack/PNG/Other/Black_ConcreteCorner_LeftUp.png" type="Texture" id=4]
+[ext_resource path="res://UIpack/PNG/blue_button01.png" type="Texture" id=5]
+[ext_resource path="res://Parking pack/PNG/Other/Black.png" type="Texture" id=6]
+[ext_resource path="res://Parking pack/PNG/Other/Black_ConcreteCorner_RightUp.png" type="Texture" id=7]
+[ext_resource path="res://UIpack/PNG/grey_panel.png" type="Texture" id=8]
+[ext_resource path="res://Parking pack/PNG/Other/Black_ConcreteCorner_LeftDown.png" type="Texture" id=9]
+[ext_resource path="res://Parking pack/PNG/Other/Black_ConcreteStop_Up.png" type="Texture" id=10]
+[ext_resource path="res://UIpack/PNG/blue_button00.png" type="Texture" id=11]
+[ext_resource path="res://Parking pack/PNG/Other/Black_ConcreteStop_Down.png" type="Texture" id=12]
+[ext_resource path="res://Parking pack/PNG/Other/Black_ConcreteCorner_RightDown.png" type="Texture" id=13]
+[ext_resource path="res://UIpack/PNG/blue_button02.png" type="Texture" id=14]
+[ext_resource path="res://Parking pack/PNG/Cars/car4_purple.png" type="Texture" id=15]
+[ext_resource path="res://Spots.gd" type="Script" id=16]
+[ext_resource path="res://PathSlow.gd" type="Script" id=17]
+[ext_resource path="res://WorldScript.gd" type="Script" id=18]
+[ext_resource path="res://Parking pack/PNG/Cars/car1_red.png" type="Texture" id=19]
+[ext_resource path="res://Parking pack/PNG/Cars/car1_yellow.png" type="Texture" id=20]
+[ext_resource path="res://Parking pack/PNG/Other/TreeBush1.png" type="Texture" id=21]
+[ext_resource path="res://Parking pack/PNG/Other/Streetlamp_Down.png" type="Texture" id=22]
+[ext_resource path="res://Parking pack/PNG/Other/Black_ShortStripeYellow_Horizontal.png" type="Texture" id=23]
+[ext_resource path="res://Parking pack/PNG/Other/Black_SiderwalkOpen_Down.png" type="Texture" id=24]
+[ext_resource path="res://Parking pack/PNG/Other/Black_Sidewalk_Right.png" type="Texture" id=25]
+[ext_resource path="res://Parking pack/PNG/Cars/car3_green.png" type="Texture" id=26]
+[ext_resource path="res://Parking pack/PNG/Other/Black_Sidewalk_Down.png" type="Texture" id=27]
+[ext_resource path="res://Parking pack/PNG/Other/Sidewalk.png" type="Texture" id=28]
+[ext_resource path="res://Parking pack/PNG/Other/Black_Sidewalk_Up.png" type="Texture" id=29]
+[ext_resource path="res://Parking pack/PNG/Other/Black_ShortStripeYellow_Vertical.png" type="Texture" id=30]
+[ext_resource path="res://PlayerCar.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Vaga.tscn" type="PackedScene" id=32]
+[ext_resource path="res://PathFast.gd" type="Script" id=33]
+[ext_resource path="res://Cars.gd" type="Script" id=34]
+[ext_resource path="res://UIpack/Font/kenvector_future.ttf" type="DynamicFontData" id=35]
+[ext_resource path="res://UIpack/Font/kenvector_future_thin.ttf" type="DynamicFontData" id=36]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 78.1621, 233.368, 0, 0, 0, 0, 78.91, -181.545, 45.6984, 76.4137, -45.6984, -76.4137, 110.811, -269.799, 32.2136, -54.6882, -32.2136, 54.6882, 5.17996, -266.053, 0, 0, 0, 0, 40.7262, -185.788, 0, 0, 0, 0, 38.9626, 234.259, -1.49831, -86.1527, 1.49831, 86.1527, -70.4846, 274.087, -92.8951, 55.4374, 92.8951, -55.4374, 79.2224, 328.805, 0, 0, 0, 0, 78.1621, 233.368 )
+}
+
+[sub_resource type="CapsuleShape2D" id=2]
+
+[sub_resource type="CircleShape2D" id=3]
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 5.88101
+
+[sub_resource type="DynamicFont" id=5]
+size = 30
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 35 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 34
+outline_size = 2
+outline_color = Color( 0.556863, 0.356863, 0.356863, 1 )
+font_data = ExtResource( 36 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 26
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 36 )
+
+[node name="Level1" type="Node2D"]
+position = Vector2( 97.0139, 93.2342 )
+script = ExtResource( 18 )
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Roads" type="Node2D" parent="."]
+
+[node name="VerticalRoad" type="Node2D" parent="Roads"]
+position = Vector2( 10.1042, 71.2203 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Black_ShortStripeYellow_Vertical" type="Sprite" parent="Roads/VerticalRoad"]
+position = Vector2( 97.9239, 57.2321 )
+texture = ExtResource( 30 )
+
+[node name="Black_ShortStripeYellow_Vertical2" type="Sprite" parent="Roads/VerticalRoad"]
+position = Vector2( 97.9239, -6.76794 )
+texture = ExtResource( 30 )
+
+[node name="Black_ShortStripeYellow_Vertical3" type="Sprite" parent="Roads/VerticalRoad"]
+position = Vector2( 97.9239, -70.7679 )
+texture = ExtResource( 30 )
+
+[node name="Black" type="Sprite" parent="Roads/VerticalRoad"]
+position = Vector2( 137.924, -70.7679 )
+texture = ExtResource( 6 )
+
+[node name="Black2" type="Sprite" parent="Roads/VerticalRoad"]
+position = Vector2( 57.9239, -70.7679 )
+texture = ExtResource( 6 )
+
+[node name="Black3" type="Sprite" parent="Roads/VerticalRoad"]
+position = Vector2( 137.924, -6.76794 )
+texture = ExtResource( 6 )
+
+[node name="Black4" type="Sprite" parent="Roads/VerticalRoad"]
+position = Vector2( 57.9239, -6.76794 )
+texture = ExtResource( 6 )
+
+[node name="Black5" type="Sprite" parent="Roads/VerticalRoad"]
+position = Vector2( 137.924, 57.2321 )
+texture = ExtResource( 6 )
+
+[node name="Black6" type="Sprite" parent="Roads/VerticalRoad"]
+position = Vector2( 57.9239, 57.2321 )
+texture = ExtResource( 6 )
+
+[node name="VerticalRoad" type="Node2D" parent="Roads/VerticalRoad"]
+position = Vector2( 0, 192 )
+
+[node name="Black_ShortStripeYellow_Vertical" type="Sprite" parent="Roads/VerticalRoad/VerticalRoad"]
+position = Vector2( 97.9239, 57.2321 )
+texture = ExtResource( 30 )
+
+[node name="Black_ShortStripeYellow_Vertical2" type="Sprite" parent="Roads/VerticalRoad/VerticalRoad"]
+position = Vector2( 97.9239, -6.76794 )
+texture = ExtResource( 30 )
+
+[node name="Black_ShortStripeYellow_Vertical3" type="Sprite" parent="Roads/VerticalRoad/VerticalRoad"]
+position = Vector2( 97.9239, -70.7679 )
+texture = ExtResource( 30 )
+
+[node name="Black" type="Sprite" parent="Roads/VerticalRoad/VerticalRoad"]
+position = Vector2( 137.924, -70.7679 )
+texture = ExtResource( 6 )
+
+[node name="Black2" type="Sprite" parent="Roads/VerticalRoad/VerticalRoad"]
+position = Vector2( 57.9239, -70.7679 )
+texture = ExtResource( 6 )
+
+[node name="Black3" type="Sprite" parent="Roads/VerticalRoad/VerticalRoad"]
+position = Vector2( 137.924, -6.76794 )
+texture = ExtResource( 6 )
+
+[node name="Black4" type="Sprite" parent="Roads/VerticalRoad/VerticalRoad"]
+position = Vector2( 57.9239, -6.76794 )
+texture = ExtResource( 6 )
+
+[node name="Black5" type="Sprite" parent="Roads/VerticalRoad/VerticalRoad"]
+position = Vector2( 143.031, 57.2321 )
+texture = ExtResource( 6 )
+
+[node name="Black6" type="Sprite" parent="Roads/VerticalRoad/VerticalRoad"]
+position = Vector2( 57.9239, 57.2321 )
+texture = ExtResource( 6 )
+
+[node name="VerticalRoad2" type="Node2D" parent="Roads/VerticalRoad"]
+position = Vector2( 0, 384 )
+
+[node name="Black_ShortStripeYellow_Vertical" type="Sprite" parent="Roads/VerticalRoad/VerticalRoad2"]
+position = Vector2( 97.9239, 57.2321 )
+texture = ExtResource( 30 )
+
+[node name="Black_ShortStripeYellow_Vertical2" type="Sprite" parent="Roads/VerticalRoad/VerticalRoad2"]
+position = Vector2( 97.9239, -6.76794 )
+texture = ExtResource( 30 )
+
+[node name="Black_ShortStripeYellow_Vertical3" type="Sprite" parent="Roads/VerticalRoad/VerticalRoad2"]
+position = Vector2( 97.9239, -70.7679 )
+texture = ExtResource( 30 )
+
+[node name="Black" type="Sprite" parent="Roads/VerticalRoad/VerticalRoad2"]
+position = Vector2( 137.924, -70.7679 )
+texture = ExtResource( 6 )
+
+[node name="Black2" type="Sprite" parent="Roads/VerticalRoad/VerticalRoad2"]
+position = Vector2( 57.9239, -70.7679 )
+texture = ExtResource( 6 )
+
+[node name="Black3" type="Sprite" parent="Roads/VerticalRoad/VerticalRoad2"]
+position = Vector2( 137.924, -6.76794 )
+texture = ExtResource( 6 )
+
+[node name="Black4" type="Sprite" parent="Roads/VerticalRoad/VerticalRoad2"]
+position = Vector2( 57.9239, -6.76794 )
+texture = ExtResource( 6 )
+
+[node name="Black5" type="Sprite" parent="Roads/VerticalRoad/VerticalRoad2"]
+position = Vector2( 137.924, 57.2321 )
+texture = ExtResource( 6 )
+
+[node name="Black6" type="Sprite" parent="Roads/VerticalRoad/VerticalRoad2"]
+position = Vector2( 57.9239, 57.2321 )
+texture = ExtResource( 6 )
+
+[node name="Crossing" type="Node2D" parent="Roads"]
+visible = false
+position = Vector2( 118.986, 77.816 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Black_ShortStripeYellow_Vertical" type="Sprite" parent="Roads/Crossing"]
+position = Vector2( -120, -208 )
+texture = ExtResource( 30 )
+
+[node name="Black_ShortStripeYellow_Horizontal" type="Sprite" parent="Roads/Crossing"]
+position = Vector2( -120, -272 )
+texture = ExtResource( 23 )
+
+[node name="Black_ShortStripeYellow_Horizontal2" type="Sprite" parent="Roads/Crossing"]
+position = Vector2( -56, -272 )
+texture = ExtResource( 23 )
+
+[node name="Black_ShortStripeYellow_Horizontal3" type="Sprite" parent="Roads/Crossing"]
+position = Vector2( -184, -272 )
+texture = ExtResource( 23 )
+
+[node name="Black" type="Sprite" parent="Roads/Crossing"]
+position = Vector2( -56, -232 )
+texture = ExtResource( 6 )
+
+[node name="Black2" type="Sprite" parent="Roads/Crossing"]
+position = Vector2( -184, -232 )
+texture = ExtResource( 6 )
+
+[node name="Black3" type="Sprite" parent="Roads/Crossing"]
+position = Vector2( -184, -312 )
+texture = ExtResource( 6 )
+
+[node name="Black4" type="Sprite" parent="Roads/Crossing"]
+position = Vector2( -120, -312 )
+texture = ExtResource( 6 )
+
+[node name="Black5" type="Sprite" parent="Roads/Crossing"]
+position = Vector2( -56, -312 )
+texture = ExtResource( 6 )
+
+[node name="Black_ShortStripeYellow_Vertical2" type="Sprite" parent="Roads/Crossing"]
+position = Vector2( -120, -144 )
+texture = ExtResource( 30 )
+
+[node name="Black6" type="Sprite" parent="Roads/Crossing"]
+position = Vector2( -160, -144 )
+texture = ExtResource( 6 )
+
+[node name="Black7" type="Sprite" parent="Roads/Crossing"]
+position = Vector2( -80, -144 )
+texture = ExtResource( 6 )
+
+[node name="Black9" type="Sprite" parent="Roads/Crossing"]
+position = Vector2( -80, -200 )
+texture = ExtResource( 6 )
+
+[node name="Black8" type="Sprite" parent="Roads/Crossing"]
+position = Vector2( -160, -192 )
+texture = ExtResource( 6 )
+
+[node name="VerticalRoad2" type="Node2D" parent="Roads"]
+visible = false
+position = Vector2( 343.458, -106.895 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Black_ShortStripeYellow_Vertical" type="Sprite" parent="Roads/VerticalRoad2"]
+position = Vector2( 97.9239, 57.2321 )
+texture = ExtResource( 30 )
+
+[node name="Black_ShortStripeYellow_Vertical2" type="Sprite" parent="Roads/VerticalRoad2"]
+position = Vector2( 97.9239, -6.76794 )
+texture = ExtResource( 30 )
+
+[node name="Black_ShortStripeYellow_Vertical3" type="Sprite" parent="Roads/VerticalRoad2"]
+position = Vector2( 97.9239, -70.7679 )
+texture = ExtResource( 30 )
+
+[node name="Black" type="Sprite" parent="Roads/VerticalRoad2"]
+position = Vector2( 137.924, -70.7679 )
+texture = ExtResource( 6 )
+
+[node name="Black2" type="Sprite" parent="Roads/VerticalRoad2"]
+position = Vector2( 57.9239, -70.7679 )
+texture = ExtResource( 6 )
+
+[node name="Black3" type="Sprite" parent="Roads/VerticalRoad2"]
+position = Vector2( 137.924, -6.76794 )
+texture = ExtResource( 6 )
+
+[node name="Black4" type="Sprite" parent="Roads/VerticalRoad2"]
+position = Vector2( 57.9239, -6.76794 )
+texture = ExtResource( 6 )
+
+[node name="Black5" type="Sprite" parent="Roads/VerticalRoad2"]
+position = Vector2( 137.924, 57.2321 )
+texture = ExtResource( 6 )
+
+[node name="Black6" type="Sprite" parent="Roads/VerticalRoad2"]
+position = Vector2( 57.9239, 57.2321 )
+texture = ExtResource( 6 )
+
+[node name="VerticalRoad" type="Node2D" parent="Roads/VerticalRoad2"]
+position = Vector2( 0, 192 )
+
+[node name="Black_ShortStripeYellow_Vertical" type="Sprite" parent="Roads/VerticalRoad2/VerticalRoad"]
+position = Vector2( 97.9239, 57.2321 )
+texture = ExtResource( 30 )
+
+[node name="Black_ShortStripeYellow_Vertical2" type="Sprite" parent="Roads/VerticalRoad2/VerticalRoad"]
+position = Vector2( 97.9239, -6.76794 )
+texture = ExtResource( 30 )
+
+[node name="Black_ShortStripeYellow_Vertical3" type="Sprite" parent="Roads/VerticalRoad2/VerticalRoad"]
+position = Vector2( 97.9239, -70.7679 )
+texture = ExtResource( 30 )
+
+[node name="Black" type="Sprite" parent="Roads/VerticalRoad2/VerticalRoad"]
+position = Vector2( 137.924, -70.7679 )
+texture = ExtResource( 6 )
+
+[node name="Black2" type="Sprite" parent="Roads/VerticalRoad2/VerticalRoad"]
+position = Vector2( 57.9239, -70.7679 )
+texture = ExtResource( 6 )
+
+[node name="Black3" type="Sprite" parent="Roads/VerticalRoad2/VerticalRoad"]
+position = Vector2( 137.924, -6.76794 )
+texture = ExtResource( 6 )
+
+[node name="Black4" type="Sprite" parent="Roads/VerticalRoad2/VerticalRoad"]
+position = Vector2( 57.9239, -6.76794 )
+texture = ExtResource( 6 )
+
+[node name="Black5" type="Sprite" parent="Roads/VerticalRoad2/VerticalRoad"]
+position = Vector2( 137.924, 57.2321 )
+texture = ExtResource( 6 )
+
+[node name="Black6" type="Sprite" parent="Roads/VerticalRoad2/VerticalRoad"]
+position = Vector2( 57.9239, 57.2321 )
+texture = ExtResource( 6 )
+
+[node name="VerticalRoad2" type="Node2D" parent="Roads/VerticalRoad2"]
+position = Vector2( 0, 384 )
+
+[node name="Black_ShortStripeYellow_Vertical" type="Sprite" parent="Roads/VerticalRoad2/VerticalRoad2"]
+position = Vector2( 97.9239, 57.2321 )
+texture = ExtResource( 30 )
+
+[node name="Black_ShortStripeYellow_Vertical2" type="Sprite" parent="Roads/VerticalRoad2/VerticalRoad2"]
+position = Vector2( 97.9239, -6.76794 )
+texture = ExtResource( 30 )
+
+[node name="Black_ShortStripeYellow_Vertical3" type="Sprite" parent="Roads/VerticalRoad2/VerticalRoad2"]
+position = Vector2( 97.9239, -70.7679 )
+texture = ExtResource( 30 )
+
+[node name="Black" type="Sprite" parent="Roads/VerticalRoad2/VerticalRoad2"]
+position = Vector2( 137.924, -70.7679 )
+texture = ExtResource( 6 )
+
+[node name="Black2" type="Sprite" parent="Roads/VerticalRoad2/VerticalRoad2"]
+position = Vector2( 57.9239, -70.7679 )
+texture = ExtResource( 6 )
+
+[node name="Black3" type="Sprite" parent="Roads/VerticalRoad2/VerticalRoad2"]
+position = Vector2( 137.924, -6.76794 )
+texture = ExtResource( 6 )
+
+[node name="Black4" type="Sprite" parent="Roads/VerticalRoad2/VerticalRoad2"]
+position = Vector2( 57.9239, -6.76794 )
+texture = ExtResource( 6 )
+
+[node name="Black5" type="Sprite" parent="Roads/VerticalRoad2/VerticalRoad2"]
+position = Vector2( 137.924, 57.2321 )
+texture = ExtResource( 6 )
+
+[node name="Black6" type="Sprite" parent="Roads/VerticalRoad2/VerticalRoad2"]
+position = Vector2( 57.9239, 57.2321 )
+texture = ExtResource( 6 )
+
+[node name="VerticalRoad3" type="Node2D" parent="Roads/VerticalRoad2"]
+position = Vector2( -3.05176e-05, -191.449 )
+
+[node name="Black_ShortStripeYellow_Vertical" type="Sprite" parent="Roads/VerticalRoad2/VerticalRoad3"]
+position = Vector2( 97.9239, 57.2321 )
+texture = ExtResource( 30 )
+
+[node name="Black_ShortStripeYellow_Vertical2" type="Sprite" parent="Roads/VerticalRoad2/VerticalRoad3"]
+position = Vector2( 97.9239, -6.76794 )
+texture = ExtResource( 30 )
+
+[node name="Black_ShortStripeYellow_Vertical3" type="Sprite" parent="Roads/VerticalRoad2/VerticalRoad3"]
+position = Vector2( 97.9239, -70.7679 )
+texture = ExtResource( 30 )
+
+[node name="Black" type="Sprite" parent="Roads/VerticalRoad2/VerticalRoad3"]
+position = Vector2( 137.924, -70.7679 )
+texture = ExtResource( 6 )
+
+[node name="Black2" type="Sprite" parent="Roads/VerticalRoad2/VerticalRoad3"]
+position = Vector2( 57.9239, -70.7679 )
+texture = ExtResource( 6 )
+
+[node name="Black3" type="Sprite" parent="Roads/VerticalRoad2/VerticalRoad3"]
+position = Vector2( 137.924, -6.76794 )
+texture = ExtResource( 6 )
+
+[node name="Black4" type="Sprite" parent="Roads/VerticalRoad2/VerticalRoad3"]
+position = Vector2( 57.9239, -6.76794 )
+texture = ExtResource( 6 )
+
+[node name="Black5" type="Sprite" parent="Roads/VerticalRoad2/VerticalRoad3"]
+position = Vector2( 137.924, 57.2321 )
+texture = ExtResource( 6 )
+
+[node name="Black6" type="Sprite" parent="Roads/VerticalRoad2/VerticalRoad3"]
+position = Vector2( 57.9239, 57.2321 )
+texture = ExtResource( 6 )
+
+[node name="VerticalRoad3" type="Node2D" parent="Roads"]
+visible = false
+position = Vector2( -135.853, -107.736 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Black_ShortStripeYellow_Vertical" type="Sprite" parent="Roads/VerticalRoad3"]
+position = Vector2( 97.9239, 57.2321 )
+texture = ExtResource( 30 )
+
+[node name="Black_ShortStripeYellow_Vertical2" type="Sprite" parent="Roads/VerticalRoad3"]
+position = Vector2( 97.9239, -6.76794 )
+texture = ExtResource( 30 )
+
+[node name="Black_ShortStripeYellow_Vertical3" type="Sprite" parent="Roads/VerticalRoad3"]
+position = Vector2( 97.9239, -70.7679 )
+texture = ExtResource( 30 )
+
+[node name="Black" type="Sprite" parent="Roads/VerticalRoad3"]
+position = Vector2( 137.924, -70.7679 )
+texture = ExtResource( 6 )
+
+[node name="Black2" type="Sprite" parent="Roads/VerticalRoad3"]
+position = Vector2( 57.9239, -70.7679 )
+texture = ExtResource( 6 )
+
+[node name="Black3" type="Sprite" parent="Roads/VerticalRoad3"]
+position = Vector2( 137.924, -6.76794 )
+texture = ExtResource( 6 )
+
+[node name="Black4" type="Sprite" parent="Roads/VerticalRoad3"]
+position = Vector2( 57.9239, -6.76794 )
+texture = ExtResource( 6 )
+
+[node name="Black5" type="Sprite" parent="Roads/VerticalRoad3"]
+position = Vector2( 137.924, 57.2321 )
+texture = ExtResource( 6 )
+
+[node name="Black6" type="Sprite" parent="Roads/VerticalRoad3"]
+position = Vector2( 57.9239, 57.2321 )
+texture = ExtResource( 6 )
+
+[node name="VerticalRoad3" type="Node2D" parent="Roads/VerticalRoad3"]
+position = Vector2( -3.05176e-05, -191.449 )
+
+[node name="Black_ShortStripeYellow_Vertical" type="Sprite" parent="Roads/VerticalRoad3/VerticalRoad3"]
+position = Vector2( 97.9239, 57.2321 )
+texture = ExtResource( 30 )
+
+[node name="Black_ShortStripeYellow_Vertical2" type="Sprite" parent="Roads/VerticalRoad3/VerticalRoad3"]
+position = Vector2( 97.9239, -6.76794 )
+texture = ExtResource( 30 )
+
+[node name="Black_ShortStripeYellow_Vertical3" type="Sprite" parent="Roads/VerticalRoad3/VerticalRoad3"]
+position = Vector2( 97.9239, -70.7679 )
+texture = ExtResource( 30 )
+
+[node name="Black" type="Sprite" parent="Roads/VerticalRoad3/VerticalRoad3"]
+position = Vector2( 137.924, -70.7679 )
+texture = ExtResource( 6 )
+
+[node name="Black2" type="Sprite" parent="Roads/VerticalRoad3/VerticalRoad3"]
+position = Vector2( 57.9239, -70.7679 )
+texture = ExtResource( 6 )
+
+[node name="Black3" type="Sprite" parent="Roads/VerticalRoad3/VerticalRoad3"]
+position = Vector2( 137.924, -6.76794 )
+texture = ExtResource( 6 )
+
+[node name="Black4" type="Sprite" parent="Roads/VerticalRoad3/VerticalRoad3"]
+position = Vector2( 57.9239, -6.76794 )
+texture = ExtResource( 6 )
+
+[node name="Black5" type="Sprite" parent="Roads/VerticalRoad3/VerticalRoad3"]
+position = Vector2( 137.924, 57.2321 )
+texture = ExtResource( 6 )
+
+[node name="Black6" type="Sprite" parent="Roads/VerticalRoad3/VerticalRoad3"]
+position = Vector2( 57.9239, 57.2321 )
+texture = ExtResource( 6 )
+
+[node name="VerticalRoad4" type="Node2D" parent="Roads"]
+position = Vector2( 10.1042, -94.184 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Black_ShortStripeYellow_Vertical" type="Sprite" parent="Roads/VerticalRoad4"]
+position = Vector2( 97.9239, 57.2321 )
+texture = ExtResource( 30 )
+
+[node name="Black_ShortStripeYellow_Vertical2" type="Sprite" parent="Roads/VerticalRoad4"]
+position = Vector2( 97.9239, -6.76794 )
+texture = ExtResource( 30 )
+
+[node name="Black_ShortStripeYellow_Vertical3" type="Sprite" parent="Roads/VerticalRoad4"]
+position = Vector2( 97.9239, -70.7679 )
+texture = ExtResource( 30 )
+
+[node name="Black" type="Sprite" parent="Roads/VerticalRoad4"]
+position = Vector2( 137.924, -70.7679 )
+texture = ExtResource( 6 )
+
+[node name="Black2" type="Sprite" parent="Roads/VerticalRoad4"]
+position = Vector2( 57.9239, -70.7679 )
+texture = ExtResource( 6 )
+
+[node name="Black3" type="Sprite" parent="Roads/VerticalRoad4"]
+position = Vector2( 137.924, -6.76794 )
+texture = ExtResource( 6 )
+
+[node name="Black4" type="Sprite" parent="Roads/VerticalRoad4"]
+position = Vector2( 57.9239, -6.76794 )
+texture = ExtResource( 6 )
+
+[node name="Black5" type="Sprite" parent="Roads/VerticalRoad4"]
+position = Vector2( 137.924, 57.2321 )
+texture = ExtResource( 6 )
+
+[node name="Black6" type="Sprite" parent="Roads/VerticalRoad4"]
+position = Vector2( 57.9239, 57.2321 )
+texture = ExtResource( 6 )
+
+[node name="VerticalRoad" type="Node2D" parent="Roads/VerticalRoad4"]
+position = Vector2( 0, 192 )
+
+[node name="Black_ShortStripeYellow_Vertical" type="Sprite" parent="Roads/VerticalRoad4/VerticalRoad"]
+position = Vector2( 97.9239, 57.2321 )
+texture = ExtResource( 30 )
+
+[node name="Black_ShortStripeYellow_Vertical2" type="Sprite" parent="Roads/VerticalRoad4/VerticalRoad"]
+position = Vector2( 97.9239, -6.76794 )
+texture = ExtResource( 30 )
+
+[node name="Black_ShortStripeYellow_Vertical3" type="Sprite" parent="Roads/VerticalRoad4/VerticalRoad"]
+position = Vector2( 97.9239, -70.7679 )
+texture = ExtResource( 30 )
+
+[node name="Black" type="Sprite" parent="Roads/VerticalRoad4/VerticalRoad"]
+position = Vector2( 137.924, -70.7679 )
+texture = ExtResource( 6 )
+
+[node name="Black2" type="Sprite" parent="Roads/VerticalRoad4/VerticalRoad"]
+position = Vector2( 57.9239, -70.7679 )
+texture = ExtResource( 6 )
+
+[node name="Black3" type="Sprite" parent="Roads/VerticalRoad4/VerticalRoad"]
+position = Vector2( 137.924, -6.76794 )
+texture = ExtResource( 6 )
+
+[node name="Black4" type="Sprite" parent="Roads/VerticalRoad4/VerticalRoad"]
+position = Vector2( 57.9239, -6.76794 )
+texture = ExtResource( 6 )
+
+[node name="Black5" type="Sprite" parent="Roads/VerticalRoad4/VerticalRoad"]
+position = Vector2( 137.924, 57.2321 )
+texture = ExtResource( 6 )
+
+[node name="Black6" type="Sprite" parent="Roads/VerticalRoad4/VerticalRoad"]
+position = Vector2( 57.9239, 57.2321 )
+texture = ExtResource( 6 )
+
+[node name="VerticalRoad2" type="Node2D" parent="Roads/VerticalRoad4"]
+position = Vector2( 0, 384 )
+
+[node name="Black_ShortStripeYellow_Vertical" type="Sprite" parent="Roads/VerticalRoad4/VerticalRoad2"]
+position = Vector2( 97.9239, 57.2321 )
+texture = ExtResource( 30 )
+
+[node name="Black_ShortStripeYellow_Vertical2" type="Sprite" parent="Roads/VerticalRoad4/VerticalRoad2"]
+position = Vector2( 97.9239, -6.76794 )
+texture = ExtResource( 30 )
+
+[node name="Black_ShortStripeYellow_Vertical3" type="Sprite" parent="Roads/VerticalRoad4/VerticalRoad2"]
+position = Vector2( 97.9239, -70.7679 )
+texture = ExtResource( 30 )
+
+[node name="Black" type="Sprite" parent="Roads/VerticalRoad4/VerticalRoad2"]
+position = Vector2( 137.924, -70.7679 )
+texture = ExtResource( 6 )
+
+[node name="Black2" type="Sprite" parent="Roads/VerticalRoad4/VerticalRoad2"]
+position = Vector2( 57.9239, -70.7679 )
+texture = ExtResource( 6 )
+
+[node name="Black3" type="Sprite" parent="Roads/VerticalRoad4/VerticalRoad2"]
+position = Vector2( 137.924, -6.76794 )
+texture = ExtResource( 6 )
+
+[node name="Black4" type="Sprite" parent="Roads/VerticalRoad4/VerticalRoad2"]
+position = Vector2( 57.9239, -6.76794 )
+texture = ExtResource( 6 )
+
+[node name="Black5" type="Sprite" parent="Roads/VerticalRoad4/VerticalRoad2"]
+position = Vector2( 137.924, 57.2321 )
+texture = ExtResource( 6 )
+
+[node name="Black6" type="Sprite" parent="Roads/VerticalRoad4/VerticalRoad2"]
+position = Vector2( 57.9239, 57.2321 )
+texture = ExtResource( 6 )
+
+[node name="Ambiente" type="Node2D" parent="."]
+z_index = -1
+
+[node name="Black" type="Sprite" parent="Ambiente"]
+position = Vector2( 197.97, -30.9787 )
+texture = ExtResource( 6 )
+
+[node name="Black2" type="Sprite" parent="Ambiente"]
+position = Vector2( 254.603, -29.5629 )
+texture = ExtResource( 6 )
+
+[node name="Black3" type="Sprite" parent="Ambiente"]
+position = Vector2( 247.052, 23.2941 )
+texture = ExtResource( 6 )
+
+[node name="Black4" type="Sprite" parent="Ambiente"]
+position = Vector2( 197.498, 26.1257 )
+texture = ExtResource( 6 )
+
+[node name="Black5" type="Sprite" parent="Ambiente"]
+position = Vector2( 170.353, -23.6514 )
+texture = ExtResource( 6 )
+
+[node name="Black6" type="Sprite" parent="Ambiente"]
+position = Vector2( 170.353, 9.91444 )
+texture = ExtResource( 6 )
+
+[node name="Spots" type="Node2D" parent="."]
+script = ExtResource( 16 )
+
+[node name="red_1" parent="Spots" instance=ExtResource( 32 )]
+position = Vector2( 189.367, -5.64941 )
+
+[node name="red_2" parent="Spots" instance=ExtResource( 32 )]
+position = Vector2( 240.343, 21.7919 )
+rotation = 3.14159
+
+[node name="yellow_1" parent="Spots" instance=ExtResource( 32 )]
+position = Vector2( 240.22, -35.0461 )
+rotation = 3.14159
+
+[node name="ClosedWalls" type="StaticBody2D" parent="."]
+position = Vector2( 127.153, -94.8514 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="OpenCornerUp" type="Sprite" parent="ClosedWalls"]
+position = Vector2( 182.4, 46.4 )
+texture = ExtResource( 1 )
+
+[node name="Black_ConcreteCorner_RightUp" type="Sprite" parent="ClosedWalls/OpenCornerUp"]
+position = Vector2( 128, 0 )
+texture = ExtResource( 7 )
+
+[node name="Black_ConcreteHorizontal" type="Sprite" parent="ClosedWalls/OpenCornerUp"]
+position = Vector2( 64, 0 )
+texture = ExtResource( 2 )
+
+[node name="VericalWall" type="Sprite" parent="ClosedWalls"]
+position = Vector2( 310.4, 110.4 )
+texture = ExtResource( 3 )
+
+[node name="Black_ConcreteVertical2" type="Sprite" parent="ClosedWalls/VericalWall"]
+position = Vector2( 0, 64 )
+texture = ExtResource( 3 )
+
+[node name="Black_ConcreteVertical3" type="Sprite" parent="ClosedWalls/VericalWall"]
+position = Vector2( 0, 128 )
+texture = ExtResource( 3 )
+
+[node name="OpenCornerDown" type="Sprite" parent="ClosedWalls"]
+position = Vector2( 182.4, 302.4 )
+texture = ExtResource( 1 )
+
+[node name="Black_ConcreteCorner_RightDown" type="Sprite" parent="ClosedWalls/OpenCornerDown"]
+position = Vector2( 128, 0 )
+texture = ExtResource( 13 )
+
+[node name="Black_ConcreteHorizontal2" type="Sprite" parent="ClosedWalls/OpenCornerDown"]
+position = Vector2( 64, 0 )
+texture = ExtResource( 2 )
+
+[node name="HorizontalWall" type="Sprite" parent="ClosedWalls"]
+visible = false
+position = Vector2( 736, 32 )
+texture = ExtResource( 2 )
+
+[node name="Black_ConcreteHorizontal2" type="Sprite" parent="ClosedWalls/HorizontalWall"]
+position = Vector2( 64, 0 )
+texture = ExtResource( 2 )
+
+[node name="Black_ConcreteHorizontal3" type="Sprite" parent="ClosedWalls/HorizontalWall"]
+position = Vector2( 128, 0 )
+texture = ExtResource( 2 )
+
+[node name="ClosedCornerUp" type="Sprite" parent="ClosedWalls"]
+position = Vector2( 54.4, 46.4 )
+texture = ExtResource( 4 )
+
+[node name="Black_ConcreteHorizontal" type="Sprite" parent="ClosedWalls/ClosedCornerUp"]
+position = Vector2( 64, 0 )
+texture = ExtResource( 2 )
+
+[node name="Black_ConcreteHorizontal2" type="Sprite" parent="ClosedWalls/ClosedCornerUp"]
+position = Vector2( 128, 0 )
+texture = ExtResource( 2 )
+
+[node name="Black_ConcreteStop_Down" type="Sprite" parent="ClosedWalls/ClosedCornerUp"]
+position = Vector2( 0, 32 )
+z_index = -1
+texture = ExtResource( 12 )
+
+[node name="ClosedCornerDown" type="Sprite" parent="ClosedWalls"]
+position = Vector2( 54.4, 302.4 )
+texture = ExtResource( 9 )
+
+[node name="Black_ConcreteHorizontal" type="Sprite" parent="ClosedWalls/ClosedCornerDown"]
+position = Vector2( 64, 0 )
+texture = ExtResource( 2 )
+
+[node name="Black_ConcreteHorizontal2" type="Sprite" parent="ClosedWalls/ClosedCornerDown"]
+position = Vector2( 128, 0 )
+texture = ExtResource( 2 )
+
+[node name="Black_ConcreteStop_Up" type="Sprite" parent="ClosedWalls/ClosedCornerDown"]
+position = Vector2( 0, -32 )
+z_index = -1
+texture = ExtResource( 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ClosedWalls"]
+position = Vector2( -745.6, 14.4 )
+polygon = PoolVector2Array( 785.642, 17.2015, 784, 72, 813.674, 72.5973, 815.009, 48.5702, 1040, 48, 1040, 272, 817.314, 273.475, 816.684, 245.127, 784.556, 244.497, 784.556, 303.713, 1071.3, 304.192, 1070.63, 18.5363 )
+
+[node name="InvisibleWall" type="CollisionPolygon2D" parent="ClosedWalls"]
+polygon = PoolVector2Array( -475.248, -43.0202, 377.289, -40.0236, 375.791, 530.831, -488.733, 529.333, -482.739, -31.0338, -499.221, -44.5185, -503.716, 544.316, 392.272, 539.821, 393.77, -55.0067, -502.217, -56.505 )
+
+[node name="Ambiente2" type="Node2D" parent="."]
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Black_SiderwalkOpen_Down" type="Sprite" parent="Ambiente2"]
+position = Vector2( -94.0278, 4.87418 )
+texture = ExtResource( 24 )
+
+[node name="Sidewalk" type="Sprite" parent="Ambiente2/Black_SiderwalkOpen_Down"]
+position = Vector2( -26.2666, -68.5954 )
+scale = Vector2( 4, 1.2 )
+texture = ExtResource( 28 )
+
+[node name="Black_Sidewalk_Down" type="Sprite" parent="Ambiente2/Black_SiderwalkOpen_Down"]
+position = Vector2( -63.038, 0 )
+texture = ExtResource( 27 )
+
+[node name="Black_Sidewalk_Right" type="Sprite" parent="Ambiente2/Black_SiderwalkOpen_Down"]
+position = Vector2( 114.867, -9.24658 )
+texture = ExtResource( 25 )
+
+[node name="Black_Sidewalk_Down2" type="Sprite" parent="Ambiente2/Black_SiderwalkOpen_Down"]
+position = Vector2( 64, 0 )
+texture = ExtResource( 27 )
+
+[node name="Black_Sidewalk_Right2" type="Sprite" parent="Ambiente2/Black_SiderwalkOpen_Down"]
+position = Vector2( 114.738, -72.6075 )
+texture = ExtResource( 25 )
+
+[node name="Black_Sidewalk_Right3" type="Sprite" parent="Ambiente2/Black_SiderwalkOpen_Down"]
+position = Vector2( 114.738, -108.961 )
+texture = ExtResource( 25 )
+
+[node name="Black_Sidewalk_Up2" type="Sprite" parent="Ambiente2/Black_SiderwalkOpen_Down"]
+position = Vector2( -61.6238, -138.292 )
+scale = Vector2( 1.3, 1 )
+texture = ExtResource( 29 )
+
+[node name="Black_Sidewalk_Up3" type="Sprite" parent="Ambiente2/Black_SiderwalkOpen_Down"]
+position = Vector2( 0.501587, -138.294 )
+texture = ExtResource( 29 )
+
+[node name="Black_Sidewalk_Up" type="Sprite" parent="Ambiente2/Black_SiderwalkOpen_Down"]
+position = Vector2( 62.3736, -138.294 )
+texture = ExtResource( 29 )
+
+[node name="Black_Sidewalk_Down3" type="Sprite" parent="Ambiente2/Black_SiderwalkOpen_Down"]
+position = Vector2( -95.038, 0 )
+texture = ExtResource( 27 )
+
+[node name="Sidewalk" type="Sprite" parent="Ambiente2/Black_SiderwalkOpen_Down/Black_Sidewalk_Down3"]
+position = Vector2( 95.0364, 53.411 )
+scale = Vector2( 0.7, 1 )
+texture = ExtResource( 28 )
+
+[node name="Sidewalk2" type="Sprite" parent="Ambiente2/Black_SiderwalkOpen_Down/Black_Sidewalk_Down3"]
+position = Vector2( 95.038, 111.377 )
+scale = Vector2( 0.7, 1 )
+texture = ExtResource( 28 )
+
+[node name="Sidewalk3" type="Sprite" parent="Ambiente2/Black_SiderwalkOpen_Down/Black_Sidewalk_Down3"]
+position = Vector2( 8.9688, 120.731 )
+scale = Vector2( 2, 0.7 )
+texture = ExtResource( 28 )
+
+[node name="Cars" type="Node2D" parent="."]
+script = ExtResource( 34 )
+
+[node name="PlayerCar1" parent="Cars" instance=ExtResource( 31 )]
+position = Vector2( -69.0317, -31.641 )
+
+[node name="red" type="Sprite" parent="Cars/PlayerCar1"]
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 19 )
+
+[node name="PlayerCar2" parent="Cars" instance=ExtResource( 31 )]
+position = Vector2( -69.0317, 136.865 )
+
+[node name="red" type="Sprite" parent="Cars/PlayerCar2"]
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 19 )
+
+[node name="PlayerCar" parent="Cars" instance=ExtResource( 31 )]
+position = Vector2( 273.768, 136.865 )
+rotation = -3.14159
+
+[node name="yellow" type="Sprite" parent="Cars/PlayerCar"]
+position = Vector2( 0, -3.05176e-05 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 20 )
+
+[node name="AI" type="Node2D" parent="."]
+
+[node name="Path2D" type="Path2D" parent="AI"]
+curve = SubResource( 1 )
+
+[node name="PathSlow" type="PathFollow2D" parent="AI/Path2D"]
+position = Vector2( 78.1621, 233.368 )
+rotation = -1.569
+script = ExtResource( 17 )
+
+[node name="NPCar" type="KinematicBody2D" parent="AI/Path2D/PathSlow"]
+position = Vector2( 1.98764, 1.72626 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AI/Path2D/PathSlow/NPCar"]
+position = Vector2( -0.00958252, -4.90369 )
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="car3_green" type="Sprite" parent="AI/Path2D/PathSlow/NPCar/CollisionShape2D"]
+position = Vector2( -0.687286, 1.23752 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 26 )
+
+[node name="PathFast" type="PathFollow2D" parent="AI/Path2D"]
+position = Vector2( 123.395, -241.003 )
+rotation = -1.84211
+offset = 500.0
+script = ExtResource( 33 )
+
+[node name="NPCar" type="KinematicBody2D" parent="AI/Path2D/PathFast"]
+position = Vector2( 1.98764, 1.72626 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AI/Path2D/PathFast/NPCar"]
+position = Vector2( -0.00958252, -4.90369 )
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="car4_purple" type="Sprite" parent="AI/Path2D/PathFast/NPCar"]
+position = Vector2( 0.0420532, -4.33148 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 15 )
+
+[node name="Obstacles" type="Node2D" parent="."]
+
+[node name="Tree1" type="StaticBody2D" parent="Obstacles"]
+position = Vector2( -16.0779, -98.6523 )
+z_index = 1
+
+[node name="TreeBush1" type="Sprite" parent="Obstacles/Tree1"]
+position = Vector2( 27.6915, 18.6206 )
+texture = ExtResource( 21 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Tree1"]
+position = Vector2( 27.6915, 19.8076 )
+shape = SubResource( 3 )
+
+[node name="StreetLamp" type="StaticBody2D" parent="Obstacles"]
+position = Vector2( 106.986, 54.1346 )
+rotation = 0.523599
+scale = Vector2( 0.7, 0.7 )
+
+[node name="Streetlamp_Down" type="Sprite" parent="Obstacles/StreetLamp"]
+position = Vector2( -9.26032, 12.5714 )
+texture = ExtResource( 22 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/StreetLamp"]
+position = Vector2( -9.26031, -12.3471 )
+shape = SubResource( 4 )
+
+[node name="StreetLamp2" type="StaticBody2D" parent="Obstacles"]
+position = Vector2( 106.986, -76.2342 )
+rotation = 0.523599
+scale = Vector2( 0.7, 0.7 )
+
+[node name="Streetlamp_Down" type="Sprite" parent="Obstacles/StreetLamp2"]
+position = Vector2( -9.26032, 12.5714 )
+texture = ExtResource( 22 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/StreetLamp2"]
+position = Vector2( -9.26031, -12.3471 )
+shape = SubResource( 4 )
+
+[node name="Tree2" type="StaticBody2D" parent="Obstacles"]
+position = Vector2( -26.8341, -2.19751 )
+z_index = 1
+
+[node name="TreeBush1" type="Sprite" parent="Obstacles/Tree2"]
+position = Vector2( 27.8202, 19.8076 )
+texture = ExtResource( 21 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Tree2"]
+position = Vector2( 27.6915, 19.8076 )
+shape = SubResource( 3 )
+
+[node name="StreetLamp3" type="StaticBody2D" parent="Obstacles"]
+position = Vector2( 249.631, -1.97438 )
+rotation = 1.5708
+scale = Vector2( 0.7, 0.7 )
+
+[node name="Streetlamp_Down" type="Sprite" parent="Obstacles/StreetLamp3"]
+position = Vector2( -9.26032, 12.5714 )
+texture = ExtResource( 22 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/StreetLamp3"]
+position = Vector2( -9.26031, -12.3471 )
+shape = SubResource( 4 )
+
+[node name="Tree3" type="StaticBody2D" parent="Obstacles"]
+position = Vector2( 81.6199, 120.865 )
+z_index = 1
+
+[node name="TreeBush1" type="Sprite" parent="Obstacles/Tree3"]
+position = Vector2( 27.6915, 18.6206 )
+texture = ExtResource( 21 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Tree3"]
+position = Vector2( 28.1635, 22.521 )
+shape = SubResource( 3 )
+
+[node name="StreetLamp4" type="StaticBody2D" parent="Obstacles"]
+position = Vector2( 26.355, 120.865 )
+rotation = -0.523599
+scale = Vector2( 0.7, 0.7 )
+
+[node name="Streetlamp_Down" type="Sprite" parent="Obstacles/StreetLamp4"]
+position = Vector2( -9.26032, 12.5714 )
+texture = ExtResource( 22 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/StreetLamp4"]
+position = Vector2( -9.26031, -12.3471 )
+shape = SubResource( 4 )
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="LevelComplete" type="Control" parent="GUI"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -164.0
+margin_top = -108.0
+margin_right = 164.0
+margin_bottom = 108.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="GUI/LevelComplete"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/LevelComplete"]
+anchor_top = 0.0555556
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="COMPLETED" type="Label" parent="GUI/LevelComplete/VBoxContainer"]
+margin_left = 14.0
+margin_right = 314.0
+margin_bottom = 73.0
+rect_min_size = Vector2( 300, 15 )
+size_flags_horizontal = 4
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "   LEVEL 
+COMPLETED"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Points" type="Label" parent="GUI/LevelComplete/VBoxContainer"]
+margin_left = 36.0
+margin_top = 74.0
+margin_right = 292.0
+margin_bottom = 113.0
+size_flags_horizontal = 4
+custom_fonts/font = SubResource( 6 )
+text = "0 / 100 Points"
+
+[node name="MarginContainer" type="MarginContainer" parent="GUI/LevelComplete/VBoxContainer"]
+margin_top = 114.0
+margin_right = 328.0
+margin_bottom = 129.0
+rect_min_size = Vector2( 0, 15 )
+
+[node name="RetryLevel" type="TextureButton" parent="GUI/LevelComplete/VBoxContainer" groups=[
+"retry",
+]]
+margin_left = 119.0
+margin_top = 130.0
+margin_right = 209.0
+margin_bottom = 170.0
+rect_min_size = Vector2( 90, 40 )
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 11 )
+expand = true
+
+[node name="Label" type="Label" parent="GUI/LevelComplete/VBoxContainer/RetryLevel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.0
+margin_top = 1.0
+margin_right = -2.0
+margin_bottom = 1.0
+custom_fonts/font = SubResource( 7 )
+text = " Retry"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextLevel" type="TextureButton" parent="GUI/LevelComplete"]
+margin_left = 20.0
+margin_top = 142.0
+margin_right = 110.0
+margin_bottom = 182.0
+rect_min_size = Vector2( 90, 40 )
+size_flags_horizontal = 2
+size_flags_vertical = 0
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GUI/LevelComplete/NextLevel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 7 )
+text = " Next"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="TextureButton" parent="GUI/LevelComplete"]
+margin_left = 218.835
+margin_top = 141.67
+margin_right = 308.835
+margin_bottom = 181.67
+rect_min_size = Vector2( 90, 40 )
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GUI/LevelComplete/Menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 7 )
+text = "Menu"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseMenu" type="Control" parent="GUI"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -164.0
+margin_top = -108.0
+margin_right = 164.0
+margin_bottom = 108.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="GUI/PauseMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/PauseMenu"]
+anchor_top = 0.0555556
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="COMPLETED" type="Label" parent="GUI/PauseMenu/VBoxContainer"]
+margin_left = 14.0
+margin_right = 314.0
+margin_bottom = 73.0
+rect_min_size = Vector2( 300, 15 )
+size_flags_horizontal = 4
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "   LEVEL 
+PAUSED"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Points" type="Label" parent="GUI/PauseMenu/VBoxContainer"]
+margin_left = 36.0
+margin_top = 74.0
+margin_right = 292.0
+margin_bottom = 113.0
+size_flags_horizontal = 4
+custom_fonts/font = SubResource( 6 )
+text = "0 / 100 Points"
+
+[node name="MarginContainer" type="MarginContainer" parent="GUI/PauseMenu/VBoxContainer"]
+margin_top = 114.0
+margin_right = 328.0
+margin_bottom = 129.0
+rect_min_size = Vector2( 0, 15 )
+
+[node name="RetryLevel" type="TextureButton" parent="GUI/PauseMenu/VBoxContainer" groups=[
+"retry",
+]]
+margin_left = 119.0
+margin_top = 130.0
+margin_right = 209.0
+margin_bottom = 170.0
+rect_min_size = Vector2( 90, 40 )
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 11 )
+expand = true
+
+[node name="Label" type="Label" parent="GUI/PauseMenu/VBoxContainer/RetryLevel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.0
+margin_top = 1.0
+margin_right = -2.0
+margin_bottom = 1.0
+custom_fonts/font = SubResource( 7 )
+text = " Retry"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextLevel" type="TextureButton" parent="GUI/PauseMenu"]
+margin_left = 20.0
+margin_top = 142.0
+margin_right = 110.0
+margin_bottom = 182.0
+rect_min_size = Vector2( 90, 40 )
+size_flags_horizontal = 2
+size_flags_vertical = 0
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GUI/PauseMenu/NextLevel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 7 )
+text = " Next"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="TextureButton" parent="GUI/PauseMenu"]
+margin_left = 218.835
+margin_top = 141.67
+margin_right = 308.835
+margin_bottom = 181.67
+rect_min_size = Vector2( 90, 40 )
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GUI/PauseMenu/Menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 7 )
+text = "Menu"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="GUI/LevelComplete/VBoxContainer/RetryLevel" to="." method="_on_RetryLevel_pressed"]
+[connection signal="pressed" from="GUI/LevelComplete/NextLevel" to="." method="_on_NextLevel_pressed"]
+[connection signal="pressed" from="GUI/LevelComplete/Menu" to="." method="_on_Menu_pressed"]
+[connection signal="pressed" from="GUI/PauseMenu/VBoxContainer/RetryLevel" to="." method="_on_RetryLevel_pressed"]
+[connection signal="pressed" from="GUI/PauseMenu/NextLevel" to="." method="_on_NextLevel_pressed"]
+[connection signal="pressed" from="GUI/PauseMenu/Menu" to="." method="_on_Menu_pressed"]

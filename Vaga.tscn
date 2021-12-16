@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Parking pack/PNG/WHITE.png" type="Texture" id=1]
+[ext_resource path="res://Parking pack/PNG/Other/Black_WhiteCorner_LeftDown.png" type="Texture" id=2]
+[ext_resource path="res://Parking pack/PNG/Other/Black_WhiteCorner_RightDown.png" type="Texture" id=3]
+[ext_resource path="res://Parking pack/PNG/Other/Black_WhiteCorner_RightUp.png" type="Texture" id=4]
+[ext_resource path="res://Parking pack/PNG/Other/Black_WhiteCorner_LeftUp.png" type="Texture" id=5]
+[ext_resource path="res://Parking pack/PNG/Other/Black_StripeWhite_Horizontal.png" type="Texture" id=6]
+[ext_resource path="res://VagaScript.gd" type="Script" id=8]
+
+[node name="Vaga" type="Node2D"]
+position = Vector2( 296, 88 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 8 )
+
+[node name="Area" type="Node2D" parent="."]
+position = Vector2( -65.9398, -39.6108 )
+
+[node name="Black_WhiteCorner_LeftDown" type="Sprite" parent="Area"]
+position = Vector2( 112.851, 8.29622 )
+texture = ExtResource( 2 )
+
+[node name="Black_WhiteCorner_LeftUp" type="Sprite" parent="Area"]
+position = Vector2( 112.851, 72.2962 )
+texture = ExtResource( 5 )
+
+[node name="Black_StripeWhite_Horizontal" type="Sprite" parent="Area"]
+position = Vector2( 64.851, 72.2962 )
+texture = ExtResource( 6 )
+
+[node name="Black_StripeWhite_Horizontal2" type="Sprite" parent="Area"]
+position = Vector2( 64.851, 8.29622 )
+texture = ExtResource( 6 )
+
+[node name="Black_WhiteCorner_RightDown" type="Sprite" parent="Area"]
+position = Vector2( 16.851, 8.29622 )
+texture = ExtResource( 3 )
+
+[node name="Black_WhiteCorner_RightUp" type="Sprite" parent="Area"]
+position = Vector2( 16.851, 72.2962 )
+texture = ExtResource( 4 )
+
+[node name="VagaCor" type="Sprite" parent="."]
+position = Vector2( -0.929321, 1.21753 )
+rotation = -3.14159
+scale = Vector2( 1.1311, 1.34052 )
+texture = ExtResource( 1 )
